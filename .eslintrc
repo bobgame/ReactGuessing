@@ -1,0 +1,16 @@
+{
+  "extends": "standard",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "no-undef": 0,
+    "no-unused-vars": 0,
+    "no-eval": 1,
+    "eqeqeq": 0,
+    "comma-dangle": 0,
+    "no-extend-native": 0,
+    "space-before-function-paren": 0
+  }
+}

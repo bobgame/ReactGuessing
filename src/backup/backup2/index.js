@@ -1,14 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import AppRouter from './AppRouter'
+import TodoList from './TodoList'
 import { Provider } from 'react-redux'
 import store from './store'
-import 'antd/dist/antd.css'
-import './style.css'
 
 const App = (
   <Provider store={store}>
-    <AppRouter />
+    <TodoList />
   </Provider>
 )
 
