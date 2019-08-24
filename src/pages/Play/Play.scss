@@ -1,0 +1,36 @@
+.number-result-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 14vh;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1vw;
+  >div {
+    width: 33%;
+    height: 6vh;
+    margin-bottom: 2vh;
+  }
+}
+.number-input-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  Button, >div {
+    width: 17%;
+    margin-bottom: 2vh;
+  }
+}
+
+.number-tool-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  Button {
+    width: 46%;
+  }
+}
