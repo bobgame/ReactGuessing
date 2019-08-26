@@ -2,56 +2,54 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Link } from 'react-router-dom'
-import { Button, Input } from 'antd'
+import { Button } from 'antd'
 
 import './Play.scss'
+import { actionClickGuess, actionClickNumber, actionDeleteNumber, actionResetList, actionCloseGameover } from '../../store/action-creator'
+import ResultBoxUi from './PlayUi/play-ui-result-box'
+import ShowBoxUi from './PlayUi/play-ui-show-box'
+import NumberBoxUi from './PlayUi/play-ui-number-box'
+import ButtonBoxUi from './PlayUi/play-ui-button-box'
+import GameoverModal from './PlayUi/play-ui-gameover-modal'
 
 class Play extends Component {
   constructor(props) {
     super(props)
     this.state = { }
   }
+
   render() {
-    const { inputValue, list, clickNumber, clickGuessBtn, deleteNumber } = this.props
+    const { inputValue, list, clickNumber, clickGuess, deleteNumber, gameOver, closeGameOver } = this.props
     return (
       <>
         <h2 className="text-center">猜数字游戏</h2>
-        <div className="number-result-box mbh-3">
-          {
-            list.map((item, index) => {
-              return (
-                <div key={'number-result' + index}>{item.numbers}: {item.result}</div>
-              )
-            })
-          }
-          <div></div>
-          <div></div>
-        </div>
-        <div className="number-show-box mbh-3">
-          <Input className="text-center" disabled value={inputValue} />
-        </div>
-        <div className="number-input-box mbh-3">
-          {
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, index) => {
-              return (
-                <Button key={'number-btn' + index} onClick={() => clickNumber(num)}>{num}</Button>
-              )
-            })
-          }
-        </div>
-        <div className="number-tool-box mbh-4">
-          <Button onClick={deleteNumber}>←</Button>
-          <Button type="primary" onClick={clickGuessBtn}>猜</Button>
-        </div>
+        <ResultBoxUi list={list} />
+        <ShowBoxUi inputValue={inputValue} />
+        <NumberBoxUi clickNumber={clickNumber} />
+        <ButtonBoxUi
+          deleteNumber={deleteNumber}
+          clickGuess={clickGuess}
+        />
         <Link to="/"><Button block>返回首页</Button></Link>
+        <GameoverModal
+          gameOver={gameOver}
+          closeGameOver={closeGameOver}
+        />
       </>
     )
+  }
+
+  componentDidMount() {
+    if (this.props.list.length === 0) {
+      this.props.resetLists()
+    }
   }
 }
 
 const stateToProps = (state) => {
   return {
     inputValue: state.inputValue,
+    gameOver: state.gameOver,
     list: state.list,
   }
 }
@@ -59,24 +57,20 @@ const stateToProps = (state) => {
 const dispatchToProps = (dispatch) => {
   return {
     clickNumber(num) {
-      let action = {
-        type: 'change_input',
-        value: num
-      }
-      dispatch(action)
+      dispatch(actionClickNumber(num))
     },
-    clickGuessBtn() {
-      let action = {
-        type: 'add_item',
-      }
-      dispatch(action)
+    clickGuess() {
+      dispatch(actionClickGuess())
     },
     deleteNumber() {
-      let action = {
-        type: 'delete_number'
-      }
-      dispatch(action)
-    }
+      dispatch(actionDeleteNumber())
+    },
+    resetLists() {
+      dispatch(actionResetList())
+    },
+    closeGameOver() {
+      dispatch(actionCloseGameover())
+    },
   }
 }
 

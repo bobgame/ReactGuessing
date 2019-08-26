@@ -1,6 +1,10 @@
+import { PLAY_TYPES } from './action-type'
+
 const defalutState = {
-  inputValue: '',
+  inputValue: ['-', '-', '-', '-'],
   rightNumber: '3629',
+  gameOver: false,
+  gameOverText: '',
   list: [
     // { numbers: '0842', result: '0A2B' },
     // { numbers: '0843', result: '1A2B' },
@@ -8,17 +12,19 @@ const defalutState = {
 }
 
 export default (state = defalutState, action) => {
-  if (action.type === 'change_input') {
+  if (action.type === PLAY_TYPES.CLICK_NUMBER) {
     let newState = JSON.parse(JSON.stringify(state))
-    if (newState.inputValue.length < 4 && newState.inputValue.indexOf(action.value) === -1) {
-      newState.inputValue += action.value + ''
+    if (newState.inputValue.indexOf('-') > -1) {
+      for (let i = 0; i < newState.inputValue.length; i++) {
+        if (newState.inputValue[i] === '-') { newState.inputValue[i] = action.value; break }
+      }
     }
     return newState
-  } else if (action.type === 'add_item') {
+  } else if (action.type === PLAY_TYPES.CLICK_GUESS) {
     let newState = JSON.parse(JSON.stringify(state))
-    if (newState.inputValue.length === 4) {
+    if (newState.inputValue.indexOf('-') === -1) {
       const rightNumbers = newState.rightNumber.split('')
-      const guessNumbers = newState.inputValue.split('')
+      const guessNumbers = newState.inputValue
       let a = 0; let b = 0
       for (let i = 0; i < guessNumbers.length; i++) {
         const guessNumber = guessNumbers[i]
@@ -31,15 +37,30 @@ export default (state = defalutState, action) => {
       }
       const numbers = newState.inputValue
       const result = `${a}A${b}B`
-      newState.inputValue = ''
-      newState.list.push({ numbers: numbers, result: result })
+      newState.inputValue = ['-', '-', '-', '-']
+      const empty = newState.list.find(l => l.numbers === '')
+      if (empty) {
+        empty.numbers = numbers
+        empty.result = result
+      }
     }
     return newState
-  } else if (action.type === 'delete_number') {
+  } else if (action.type === PLAY_TYPES.DELETE_NUMBER) {
     let newState = JSON.parse(JSON.stringify(state))
-    if (newState.inputValue.length > 0) {
-      newState.inputValue = newState.inputValue.substring(0, newState.inputValue.length - 1)
+    for (let i = newState.inputValue.length - 1; i >= 0; i--) {
+      if (newState.inputValue[i] !== '-') { newState.inputValue[i] = '-'; break }
     }
+    return newState
+  } else if (action.type === PLAY_TYPES.RESET_LIST) {
+    let newState = JSON.parse(JSON.stringify(state))
+    newState.list = []
+    for (let i = 0; i < 9; i++) {
+      newState.list.push({ numbers: '', result: '' })
+    }
+    return newState
+  } else if (action.type === PLAY_TYPES.CLOSE_GAMEOVER) {
+    let newState = JSON.parse(JSON.stringify(state))
+    newState.gameOver = false
     return newState
   }
   return state

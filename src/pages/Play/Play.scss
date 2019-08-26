@@ -1,35 +1,72 @@
-.number-result-box{
+.number-result-box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  height: 14vh;
+  align-content: space-between;
+  height: 15vh;
   overflow: hidden;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 1vw;
-  >div {
-    width: 33%;
-    height: 6vh;
-    margin-bottom: 2vh;
+  padding: 1.5vh;
+
+  .result-item {
+    width: 32%;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    border-radius: 3px;
+    color: #1890ff;
+    font-weight: bold;
   }
-}
-.number-input-box{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  Button, >div {
-    width: 17%;
-    margin-bottom: 2vh;
+  .empty-item{
+    width: 32%;
+    height: 3vh;
   }
 }
 
-.number-tool-box{
+.number-show-box{
+  &:disabled{
+    width: 100%;
+    font-size: 3vh;
+    height: 6vh;
+    background: none !important;
+    color: #000 !important;
+    cursor: default !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .show-box-item{
+      width: 8%;
+      margin: 0 2%;
+      cursor: default;
+    }
+  }
+}
+
+.number-input-box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+
+  Button,
+  >div {
+    width: 17%;
+    margin-bottom: 2vh;
+    height: 4vh;
+    font-size: 2vh;
+  }
+}
+
+.number-tool-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
   Button {
     width: 46%;
   }

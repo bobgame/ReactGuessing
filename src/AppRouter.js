@@ -8,7 +8,7 @@ import { Row, Col } from 'antd'
 const AppRouter = () => {
   return (
     <Row className="h-100" type="flex" justify="space-around" align="middle">
-      <Col span={12}>
+      <Col span={20} lg={8} sm={12}>
         <Router>
           <Route path="/" exact component={Home} />
           <Route path="/home" component={Home} />
