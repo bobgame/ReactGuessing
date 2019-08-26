@@ -6,11 +6,11 @@ import { Button } from 'antd'
 
 import './Play.scss'
 import { actionClickGuess, actionClickNumber, actionDeleteNumber, actionResetList, actionCloseGameover } from '../../store/action-creator'
-import ResultBoxUi from './PlayUi/play-ui-result-box'
-import ShowBoxUi from './PlayUi/play-ui-show-box'
-import NumberBoxUi from './PlayUi/play-ui-number-box'
-import ButtonBoxUi from './PlayUi/play-ui-button-box'
-import GameoverModal from './PlayUi/play-ui-gameover-modal'
+import PlayResultBox from './ui/play-ui-result-box'
+import PlayShowBox from './ui/play-ui-show-box'
+import PlayNumberBox from './ui/play-ui-number-box'
+import PlayButtonBox from './ui/play-ui-button-box'
+import GameoverModal from './ui/play-ui-gameover-modal'
 
 class Play extends Component {
   constructor(props) {
@@ -23,10 +23,10 @@ class Play extends Component {
     return (
       <>
         <h2 className="text-center">猜数字游戏</h2>
-        <ResultBoxUi list={list} />
-        <ShowBoxUi inputValue={inputValue} />
-        <NumberBoxUi clickNumber={clickNumber} />
-        <ButtonBoxUi
+        <PlayResultBox list={list} />
+        <PlayShowBox inputValue={inputValue} />
+        <PlayNumberBox clickNumber={clickNumber} />
+        <PlayButtonBox
           deleteNumber={deleteNumber}
           clickGuess={clickGuess}
         />

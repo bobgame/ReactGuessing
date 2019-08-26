@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ResultBoxUi = (props) => {
+const PlayResultBox = (props) => {
   return (
     <div className="number-result-box mbh-3">
       {
@@ -16,4 +16,4 @@ const ResultBoxUi = (props) => {
   )
 }
 
-export default ResultBoxUi
+export default PlayResultBox

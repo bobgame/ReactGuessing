@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'antd'
 
-const ShowBoxUi = (props) => {
+const PlayShowBox = (props) => {
   return (
     <Button disabled block className="number-show-box mbh-3">
       {
@@ -15,4 +15,4 @@ const ShowBoxUi = (props) => {
   )
 }
 
-export default ShowBoxUi
+export default PlayShowBox

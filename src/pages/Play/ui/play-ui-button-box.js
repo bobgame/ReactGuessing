@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'antd'
 
-const ButtonBoxUi = (props) => {
+const PlayButtonBox = (props) => {
   return (
     <div className="number-tool-box mbh-4">
       <Button onClick={props.deleteNumber}>←</Button>
@@ -10,4 +10,4 @@ const ButtonBoxUi = (props) => {
   )
 }
 
-export default ButtonBoxUi
+export default PlayButtonBox

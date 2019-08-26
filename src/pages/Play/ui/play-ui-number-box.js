@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'antd'
 
-const NumberBoxUi = (props) => {
+const PlayNumberBox = (props) => {
   return (
     <div className="number-input-box mbh-3">
       {
@@ -15,4 +15,4 @@ const NumberBoxUi = (props) => {
   )
 }
 
-export default NumberBoxUi
+export default PlayNumberBox
