@@ -41,7 +41,7 @@ export default (state = defalutState, action) => {
         console.log(guessNumber, rightNumber)
         if (rightNumber === guessNumber) {
           a++
-        } else if (rightNumbers.indexOf(guessNumber) > -1) {
+        } else if (rightNumbers.indexOf(guessNumber + '') > -1) {
           b++
         }
       }
