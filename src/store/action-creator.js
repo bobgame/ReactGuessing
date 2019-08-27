@@ -15,11 +15,15 @@ export const actionDeleteNumber = () => ({
 })
 
 export const actionResetList = () => ({
-  type: PLAY_TYPES.RESET_LIST
+  type: PLAY_TYPES.RESET_GAME
 })
 
 export const actionCloseGameover = () => ({
   type: PLAY_TYPES.CLOSE_GAMEOVER
+})
+
+export const actionAddUseTime = () => ({
+  type: PLAY_TYPES.ADD_USE_TIME
 })
 
 // export const getTodoList = () => {

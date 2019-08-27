@@ -4,14 +4,13 @@ import { Modal } from 'antd'
 const GameoverModal = (props) => {
   return (
     <Modal
-      title="Basic Modal"
-      visible={props.gameOver}
+      title="游戏结束"
+      visible={props.gameover.isOver}
       onOk={props.closeGameOver}
       onCancel={props.closeGameOver}
     >
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
+      <h2 className="text-center">{props.gameover.title}</h2>
+      <p className="text-center">{props.gameover.text}</p>
     </Modal>
   )
 }

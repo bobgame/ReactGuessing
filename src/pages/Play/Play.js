@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Link } from 'react-router-dom'
-import { Button } from 'antd'
+import { Button, List } from 'antd'
 
 import './Play.scss'
-import { actionClickGuess, actionClickNumber, actionDeleteNumber, actionResetList, actionCloseGameover } from '../../store/action-creator'
+import { actionClickGuess, actionClickNumber, actionDeleteNumber, actionResetList, actionCloseGameover, actionAddUseTime } from '../../store/action-creator'
 import PlayResultBox from './ui/play-ui-result-box'
 import PlayShowBox from './ui/play-ui-show-box'
 import PlayNumberBox from './ui/play-ui-number-box'
@@ -19,10 +19,30 @@ class Play extends Component {
   }
 
   render() {
-    const { inputValue, list, clickNumber, clickGuess, deleteNumber, gameOver, closeGameOver } = this.props
+    const {
+      inputValue, list, times, gameover, useTime,
+      clickNumber, clickGuess, deleteNumber, closeGameOver
+    } = this.props
+
+    const data = [
+      `剩余次数: ${times}`,
+      `时间: ${useTime.mm}:${useTime.ss}`,
+    ]
     return (
       <>
         <h2 className="text-center">猜数字游戏</h2>
+        <List
+          grid={{ column: 2 }}
+          itemLayout="vertical"
+          className="info-box mbh-2"
+          bordered
+          dataSource={data}
+          renderItem={item => (
+            <List.Item>
+              {item}
+            </List.Item>
+          )}
+        />
         <PlayResultBox list={list} />
         <PlayShowBox inputValue={inputValue} />
         <PlayNumberBox clickNumber={clickNumber} />
@@ -32,7 +52,7 @@ class Play extends Component {
         />
         <Link to="/"><Button block>返回首页</Button></Link>
         <GameoverModal
-          gameOver={gameOver}
+          gameover={gameover}
           closeGameOver={closeGameOver}
         />
       </>
@@ -43,14 +63,22 @@ class Play extends Component {
     if (this.props.list.length === 0) {
       this.props.resetLists()
     }
+    this.addUseTimeInterval = setInterval(() => {
+      this.props.addUseTime()
+    }, 1000)
+  }
+  componentWillUnmount() {
+    clearInterval(this.addUseTimeInterval)
   }
 }
 
 const stateToProps = (state) => {
   return {
     inputValue: state.inputValue,
-    gameOver: state.gameOver,
+    gameover: state.gameover,
     list: state.list,
+    times: state.times,
+    useTime: state.useTime,
   }
 }
 
@@ -70,6 +98,9 @@ const dispatchToProps = (dispatch) => {
     },
     closeGameOver() {
       dispatch(actionCloseGameover())
+    },
+    addUseTime() {
+      dispatch(actionAddUseTime())
     },
   }
 }

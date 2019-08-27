@@ -3,7 +3,7 @@ import { Button } from 'antd'
 
 const PlayShowBox = (props) => {
   return (
-    <Button disabled block className="number-show-box mbh-3">
+    <Button disabled block className="number-show-box mbh-2">
       {
         props.inputValue.map((item, index) => {
           return (

@@ -4,19 +4,24 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Play from './pages/Play/Play'
 import { Row, Col } from 'antd'
+import Setting from './pages/Setting/Setting'
+import Help from './pages/Help/Help'
+import About from './pages/About/About'
 
 const AppRouter = () => {
   return (
     <Row className="h-100" type="flex" justify="space-around" align="middle">
-      <Col span={20} lg={8} sm={12}>
+      <Col span={20} lg={10} sm={16}>
         <Router>
           <Route path="/" exact component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/play" component={Play} />
+          <Route path="/setting" component={Setting} />
+          <Route path="/help" component={Help} />
+          <Route path="/about" component={About} />
         </Router>
       </Col>
     </Row>
-
   )
 }
 

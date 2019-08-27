@@ -2,7 +2,7 @@ import React from 'react'
 
 const PlayResultBox = (props) => {
   return (
-    <div className="number-result-box mbh-3">
+    <div className="number-result-box mbh-2">
       {
         props.list.map((item, index) => {
           if (item.numbers !== '') {

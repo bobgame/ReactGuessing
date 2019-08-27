@@ -71,3 +71,10 @@
     width: 46%;
   }
 }
+
+.info-box{
+  &.ant-list-grid .ant-list-item{
+    margin: 1vh 0;
+    text-align: center;
+  }
+}
