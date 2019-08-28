@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ReactGuessing/static/css/main.54b8c9ce.chunk.css",
-    "main.js": "/ReactGuessing/static/js/main.145fe35a.chunk.js",
-    "main.js.map": "/ReactGuessing/static/js/main.145fe35a.chunk.js.map",
+    "main.js": "/ReactGuessing/static/js/main.963a8d62.chunk.js",
+    "main.js.map": "/ReactGuessing/static/js/main.963a8d62.chunk.js.map",
     "runtime~main.js": "/ReactGuessing/static/js/runtime~main.ca325882.js",
     "runtime~main.js.map": "/ReactGuessing/static/js/runtime~main.ca325882.js.map",
     "static/css/2.e8d046a2.chunk.css": "/ReactGuessing/static/css/2.e8d046a2.chunk.css",
     "static/js/2.8cb18358.chunk.js": "/ReactGuessing/static/js/2.8cb18358.chunk.js",
     "static/js/2.8cb18358.chunk.js.map": "/ReactGuessing/static/js/2.8cb18358.chunk.js.map",
     "index.html": "/ReactGuessing/index.html",
-    "precache-manifest.a28c374d6631d91c7d937c0c85110b3d.js": "/ReactGuessing/precache-manifest.a28c374d6631d91c7d937c0c85110b3d.js",
+    "precache-manifest.d4886c027a3240325bd78fa6f7b75d04.js": "/ReactGuessing/precache-manifest.d4886c027a3240325bd78fa6f7b75d04.js",
     "service-worker.js": "/ReactGuessing/service-worker.js",
     "static/css/2.e8d046a2.chunk.css.map": "/ReactGuessing/static/css/2.e8d046a2.chunk.css.map",
     "static/css/main.54b8c9ce.chunk.css.map": "/ReactGuessing/static/css/main.54b8c9ce.chunk.css.map"
