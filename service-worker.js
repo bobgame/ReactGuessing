@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ReactGuessing/precache-manifest.b6f537e3a82dc686cb2852d4965e9380.js"
+  "/ReactGuessing/precache-manifest.45b58c0ebe630e9d69981f9caa39e329.js"
 );
 
 self.addEventListener('message', (event) => {

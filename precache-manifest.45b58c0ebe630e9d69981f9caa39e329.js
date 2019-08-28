@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e04b81ebdd7342e60f5adf7e24206968",
+    "revision": "686822f9718954fe9a95babdc42038f5",
     "url": "/ReactGuessing/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ReactGuessing/static/css/2.e8d046a2.chunk.css"
   },
   {
-    "revision": "f06189cd4119a20055ab",
+    "revision": "c2512fe30ac777ba60a7",
     "url": "/ReactGuessing/static/css/main.54b8c9ce.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ReactGuessing/static/js/2.8cb18358.chunk.js"
   },
   {
-    "revision": "f06189cd4119a20055ab",
-    "url": "/ReactGuessing/static/js/main.21b08300.chunk.js"
+    "revision": "c2512fe30ac777ba60a7",
+    "url": "/ReactGuessing/static/js/main.c7f9ace8.chunk.js"
   },
   {
     "revision": "e7eb4d34df5bb141f66e",
