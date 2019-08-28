@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
-The [Demo](https://bobgame.github.io/ReactGuessing/.).
+The [Demo](https://bobgame.github.io/ReactGuessing/demo/index.html).
 
 ## Available Scripts
 
