@@ -11,10 +11,9 @@ import About from './pages/About/About'
 const AppRouter = () => {
   return (
     <Row className="h-100" type="flex" justify="space-around" align="middle">
-      <Col span={20} lg={10} sm={16}>
-        <Router>
+      <Col xs={20} sm={16} md={12} lg={8} xl={6}>
+        <Router basename={process.env.PUBLIC_URL}>
           <Route path="/" exact component={Home} />
-          <Route path="/home" component={Home} />
           <Route path="/play" component={Play} />
           <Route path="/setting" component={Setting} />
           <Route path="/help" component={Help} />

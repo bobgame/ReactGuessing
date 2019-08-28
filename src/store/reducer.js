@@ -7,23 +7,17 @@ import {
 export default (state = defalutState, action) => {
   switch (action.type) {
     case PLAY_TYPES.CLICK_NUMBER:
-      clickNumberReducer(state, action.value)
-      break
+      return clickNumberReducer(state, action.value)
     case PLAY_TYPES.CLICK_GUESS:
-      clickGuessReducer(state)
-      break
+      return clickGuessReducer(state)
     case PLAY_TYPES.DELETE_NUMBER:
-      deleteNumberReducer(state)
-      break
+      return deleteNumberReducer(state)
     case PLAY_TYPES.RESET_GAME:
-      resetGameReducer(state)
-      break
+      return resetGameReducer(state)
     case PLAY_TYPES.CLOSE_GAMEOVER:
-      closeGameOverReducer(state)
-      break
+      return closeGameOverReducer(state)
     case PLAY_TYPES.ADD_USE_TIME:
-      addUseItemReducer(state)
-      break
+      return addUseItemReducer(state)
     default:
       break
   }
